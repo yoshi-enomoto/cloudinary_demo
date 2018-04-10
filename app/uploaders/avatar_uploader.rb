@@ -14,6 +14,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
     process :resize_to_fit => [50, 50]
   end
 
+  # ここでCloudinaryから画像を参照
   def public_id
     return model.id
   end
