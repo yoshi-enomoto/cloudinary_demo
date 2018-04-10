@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: hybrbspwe
+  api_key: '278982485479317'
+  api_secret: lNIo1oNQ0k95jJJALnjdTokNAi8
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: hybrbspwe
+  api_key: '278982485479317'
+  api_secret: lNIo1oNQ0k95jJJALnjdTokNAi8
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: hybrbspwe
+  api_key: '278982485479317'
+  api_secret: lNIo1oNQ0k95jJJALnjdTokNAi8
+  enhance_image_tag: true
+  static_image_support: false
