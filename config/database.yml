@@ -19,14 +19,14 @@ default: &default
 
 development:
   <<: *default
-  database: coudinary_demo_development
+  database: cloudinary_demo_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: coudinary_demo_test
+  database: cloudinary_demo_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: coudinary_demo_production
-  username: coudinary_demo
-  password: <%= ENV['COUDINARY_DEMO_DATABASE_PASSWORD'] %>
+  database: cloudinary_demo_production
+  username: cloudinary_demo
+  password: <%= ENV['CLOUDINARY_DEMO_DATABASE_PASSWORD'] %>
