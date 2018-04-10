@@ -1,33 +1,28 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Users</h1>
+<!-- h1名称の変更 -->
+<h1>Listing users</h1>
 
 <table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Avatar</th>
-      <th>Remove avatar</th>
-      <th>Avatar cache</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <tr>
+    <!-- テーブルの基本構成の修正（th５個から４個へ -->
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
 
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.name %></td>
-        <td><%= user.avatar %></td>
-        <td><%= user.remove_avatar %></td>
-        <td><%= user.avatar_cache %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+<% @users.each do |user| %>
+  <tr>
+    <!-- テーブルの基本構成の修正（tdを作詞カラム５個から固有のものへ -->
+    <td><%= user.name %></td>
+    <td><%= link_to 'Show', user %></td>
+    <td><%= link_to 'Edit', edit_user_path(user) %></td>
+    <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
 </table>
 
-<br>
+<br />
 
 <%= link_to 'New User', new_user_path %>

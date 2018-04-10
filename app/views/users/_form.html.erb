@@ -1,36 +1,32 @@
-<%= form_for(user) do |f| %>
-  <% if user.errors.any? %>
+<!-- 変数名の変更 -->
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <!-- 変数名の変更 -->
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
       <ul>
-      <% user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+      <!-- 変数名、および回す変数名の変更 -->
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
 
   <div class="field">
-    <%= f.label :name %>
+    <!-- 『br』の追加 -->
+    <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
-
   <div class="field">
-    <%= f.label :avatar %>
-    <%= f.text_field :avatar %>
+        <!-- 追加したカラムに対応させる為の修正？ -->
+        <!-- labelとtext_fieldで生成される為 -->
+        <%= image_tag(@user.avatar_url(:thumbnail), :width => 80, :height => 80) %>
+        <%= f.file_field :avatar %>
+        <%= f.check_box :remove_avatar %> 画像を削除する
+        <%= f.hidden_field :avatar_cache %>
   </div>
-
-  <div class="field">
-    <%= f.label :remove_avatar %>
-    <%= f.check_box :remove_avatar %>
-  </div>
-
-  <div class="field">
-    <%= f.label :avatar_cache %>
-    <%= f.text_field :avatar_cache %>
-  </div>
-
   <div class="actions">
     <%= f.submit %>
   </div>

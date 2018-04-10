@@ -1,24 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <!--表示の仕方の変更  -->
+  <b>Name:</b>
   <%= @user.name %>
 </p>
 
 <p>
-  <strong>Avatar:</strong>
-  <%= @user.avatar %>
+  <!--画像の引っ張り方を設定(image_tag)  -->
+  <b>Avatar:</b>
+  <%= image_tag(@user.avatar_url) %>
 </p>
 
-<p>
-  <strong>Remove avatar:</strong>
-  <%= @user.remove_avatar %>
-</p>
-
-<p>
-  <strong>Avatar cache:</strong>
-  <%= @user.avatar_cache %>
-</p>
+  <!--不要項目の２個削除 -->
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
