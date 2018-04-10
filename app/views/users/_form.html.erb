@@ -15,16 +15,15 @@
   <% end %>
 
   <div class="field">
-    <!-- 『br』の追加 -->
-    <%= f.label :name %><br />
+    <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
   <div class="field">
         <!-- 追加したカラムに対応させる為の修正？ -->
         <!-- labelとtext_fieldで生成される為 -->
-        <%= image_tag(@user.avatar_url(:thumbnail), :width => 80, :height => 80) %>
-        <%= f.file_field :avatar %>
-        <%= f.check_box :remove_avatar %> 画像を削除する
+        <!-- 下記、edit時のプレビュー -->
+        <%= image_tag(@user.avatar_url, :width => 80, :height => 80) %>
+        <%= f.file_field :avatar %><!-- ファイルボックスを作成できます -->
         <%= f.hidden_field :avatar_cache %>
   </div>
   <div class="actions">
